@@ -23,20 +23,50 @@ struct element{
               }elem[115];
 int main()
 {
-    int n,t,a,i;
+    int n,t,a,i,j,k = 100;
     char name[50],c;
     //Displaying introduction.
     system("COLOR 8F");
     printf("\n\n\n\n\n\n\n\n\n\n\n\t\tA PROGRAM FOR BEGINNEERS");
     Sleep(3000);
     system("cls");
+     //LOADING SCREEN
     for(i=1;i<=100;++i)
     {
-                       Sleep(5);
-                       system("cls");
-                       printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tLOADING %d%", i);
-                       if(i==100)
-                       Sleep(1000);
+      system("cls");
+      printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tLOADING %d %%\n", i);
+      if(i % 2 == 0)
+      {
+        printf("\t\t\t");
+        for(j = 0; j <= i; j++)
+        {
+          printf("#");
+        }
+        for(k = 100 - j; k > 0 ; k--)
+        {
+          printf("_");
+        }
+      }
+      if(i == 1)
+      {
+        Sleep(1000);
+      }
+      if(i == 5)
+      {
+        Sleep(250);
+      }
+      if(i == 25)
+      {
+        Sleep(250);
+      }
+      if(i == 60)
+      {
+        Sleep(400);
+      }
+      if(i == 100)
+      {
+        Sleep(1000);
+      }
     }
     system("cls");
 
