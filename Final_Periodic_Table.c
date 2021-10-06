@@ -1,4 +1,3 @@
-/*Finalized periodic table code here.*/
 #include <conio.h>
 #include <string.h>
 #include <stdio.h>
@@ -27,62 +26,66 @@ void display_data(int i);
 
 int main()
 {
-    int n,t,a,i,j,k = 100;
-    char name[50],c;
-    //Displaying introduction.
-    system("COLOR 8F");
-    printf("\n\n\n\n\n\n\n\n\n\n\n\t\tA PROGRAM FOR BEGINNEERS");
-    Sleep(3000);                      //Freeze program for 3 sec(Defined in windows.h)
-    system("cls");
+     int n,t,a,i,j,k = 100;
+     char name[50],c;
+     struct _COORD COORD = {0, 0};
+     //Displaying introduction.
+     system("COLOR 8F");
+     printf("\n\n\n\n\n\n\n\n\n\n\n\t\tA PROGRAM FOR BEGINNEERS");
+     Sleep(3000);                      //Freeze program for 3 sec(Defined in windows.h)
+     system("cls");
 
      for(i=1;i<=100;++i)
-    {
-		system("cls");
-		printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tLOADING %d %%\n", i);
-		if(i % 2 == 0)
-		{
-			printf("\t\t\t");
-			for(j = 0; j <= i; j++)
-			{
-				printf("#");
-			}
-			for(k = 100 - j; k > 0 ; k--)
-			{
-				printf("_");
-			}
-		}
-		if(i == 1)
-		{
-			Sleep(1000);
-		}
-		if(i == 5)
-		{
-			Sleep(250);
-		}
-		if(i == 25)
-		{
-			Sleep(250);
-		}
-		if(i == 60)
-		{
-			Sleep(400);
-		}
-		if(i == 100)
-		{
-			Sleep(1000);
-		}
-    }
-    system("cls");
+     {
+               printf("\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\tLOADING %d %%\n", i);
+               if(i % 2 == 0)
+               {
+                    printf("\t\t\t\t\t\t");
+                    for(j = 0; j <= i / 2; j++)
+                    {
+                         printf("%c", 223);
+                    }
+                    for(k = 50 - j; k > 0 ; k--)
+                    {
+                         printf("~");
+                    }
+               }
+               if(i == 1)
+               {
+                    Sleep(1000);
+               }
+               if(i == 5)
+               {
+                    Sleep(250);
+               }
+               if(i == 25)
+               {
+                    Sleep(400);
+               }
+               if(i == 60)
+               {
+                    Sleep(400);
+               }
+               if(i == 100)
+               {
+                    Sleep(1000);
+               }
+               if(i != 100)
+               {
+                    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), COORD);
+               }
+     }
+     system("cls");
 
-    //Displaying the modern periodic table.
-    display_table();
-    system("PAUSE");
-    system("cls");
-    //Initializing atomic numbers.
-    for(i=1;i<=114;++i)
-    {
-          elem[i].atomicno=i;
-    }
+     //Displaying the modern periodic table.
+     display_table();
+     system("PAUSE");
+     system("cls");
+     //Initializing atomic numbers.
+     for(i=1;i<=114;++i)
+     {
+               elem[i].atomicno=i;
+     }
     //Initializing element names and electronic configurations.
      {
           strcpy(elem[1].name,"Hydrogen- H");          strcpy(elem[1].ec,"1s1");
