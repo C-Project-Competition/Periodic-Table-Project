@@ -957,8 +957,15 @@ void read_data()
 			print_data(file_name, fp1, new_line);
 			break;
 		case '2':
+               search:
 			split_string(search_word, word_group, &word_num);
 			search_engine(fp1, word_group, word_num, file_name, new_line);
+               printf("\n\t\tDo you want to search again? (Y/N)");
+               scanf(" %c", &choice);
+               if(choice == 'y' || choice == 'Y')
+               {
+                    goto search;
+               }
 			break;
 		default:
 			printf("Invalid Selection");
@@ -982,6 +989,7 @@ void edit_data()
 	fclose(fp1);
 	fp1 = fopen(file_name, "a");
 	store_loop(fp1);
+     fclose(fp1);
 }
 void store_loop(FILE *fp1)
 {
@@ -1042,6 +1050,7 @@ void print_data(char topic[], FILE *fp, int new_line)
 	{
 		if(data == '\n')
 		{
+               count = 0;
 			line_num++;
 			if(line_num == new_line)
 			{
@@ -1241,6 +1250,7 @@ void dual_lineprint(FILE *fp, int line, int j)
 			{
 				if(data == '\n')
 				{
+                         char_num = 0;
 					limit++;
 					if(limit == 2)
 					{
